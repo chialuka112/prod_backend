@@ -29,8 +29,14 @@ pool.connect((err, client, release) => {
   }
 });
 
-app.use("/api", authRoutes);
-app.use("/api", prodRoutes);
+app.get('/', (req, res) => {
+  res.send('Product Verification API is running');
+});
+
+app.get("/api", authRoutes);
+app.get("/api", prodRoutes);
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
