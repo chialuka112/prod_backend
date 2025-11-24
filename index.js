@@ -29,12 +29,9 @@ pool.connect((err, client, release) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('Product Verification API is running');
-});
 
-app.get("/api", authRoutes);
-app.get("/api", prodRoutes);
+app.use("/api", authRoutes);
+app.use("/api", prodRoutes);
 
 
 
