@@ -51,7 +51,7 @@ router.post("/signup", async (req, res) => {
 });
 
 //login route
-router.post("/login", async (req, res) => {
+router.get("/login", async (req, res) => {
   const { name, password } = req.body;
     try {
     const userQuery = "SELECT * FROM users WHERE name = $1";
