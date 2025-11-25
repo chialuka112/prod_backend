@@ -29,11 +29,8 @@ pool.connect((err, client, release) => {
   }
 });
 
-
 app.use("/api", authRoutes);
 app.use("/api", prodRoutes);
-
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
